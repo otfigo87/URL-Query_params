@@ -28,6 +28,12 @@ app.get("/awesome", (req, res) => {
     <img src="https://static.boredpanda.com/blog/wp-content/uuuploads/plant-sculptures-mosaicultures-internationales-de-montreal/plant-sculptures-mosaicultures-internationales-de-montreal-14.jpg" >`);
 });
 
+app.get('/howdy/:firstname', function(req, res) {
+    console.log(req.params);
+    console.log(req.query);
+    res.send(`${req.query.nickname}, ${req.query.year}`)
+})
+
 app.get('/hello/:firstname/:lastname', (req, res) => {
     console.log(req.params)
     const {firstname, lastname} = req.params
